@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <title>Interaktiva knappar</title>
@@ -15,7 +16,14 @@
     <h2 id="huvudrubrik">Välkommen till min sida</h2>
     <p id="brodtext">Detta är ett stycke text.</p>
 
-    <button onclick="document.getElementById('huvudrubrik').textContent='Rubriken är ändrad!'; document.getElementById('brodtext').textContent='Brödtexten har uppdaterats!';">Ändra innehåll</button>
+    <button
+        onclick="document.getElementById('huvudrubrik').textContent='Henrik'; document.getElementById('brodtext').textContent='Smörgåstårta';">Ändra
+        innehåll</button>
+
+    <button
+        onclick="document.getElementById('huvudrubrik').textContent='Välkommen till min sida'; document.getElementById('brodtext').textContent='Detta är ett stycke text.';">
+        Återställ innerhållet
+    </button>
 
     <!-- 
     **************************************************************************
@@ -28,9 +36,18 @@
     <hr>
 
     <h3>Del 2: Använda innerHTML och HTML-taggar</h3>
-    <p>Här ska innehållet förändras med HTML-taggar.</p>
+    <p id="styling">Här ska innehållet förändras med HTML-taggar.</p>
 
-    <button onclick="document.getElementById('styling').textContent='<b>Detta är fetstilad text!</b>';">Gör fetstil</button>
+    <button onclick="document.getElementById('styling').innerHTML='<b>Detta är fetstilad text!</b>';">Gör
+        fetstil</button>
+
+    <button onclick="document.getElementById('styling').innerHTML=`<a href='https:vecka.nu'>Vecka.nu</a>`">
+        Gör till länk
+    </button>
+
+    <button onclick="document.getElementById('styling').innerHTML='<i>WOHOOOOOOO</i>';">
+        Gör kursiv
+    </button>
 
     <!-- 
     **************************************************************************
@@ -49,6 +66,15 @@
         <p id="boxText">Detta är en informationsruta.</p>
     </div>
 
+    <button
+        onclick="document.getElementById('boxText').innerHTML = 'Systemet är igång'; document.getElementById('box').style.backgroundColor='lightblue';">
+        Starta
+    </button>
+    <button
+        onclick="document.getElementById('boxText').innerHTML = 'Detta är en informationsruta.'; document.getElementById('box').style.backgroundColor='white';">
+        Stäng av
+    </button>
+
     <!-- 
     **************************************************************************
     UPPGIFT 3:
@@ -57,6 +83,6 @@
     3. Utmaning: Skapa en knapp som utför tre olika ändringar på tre olika element samtidigt med en enda lång rad JavaScript i onclick.
     **************************************************************************
     -->
-    </body>
+</body>
 
 </html>
